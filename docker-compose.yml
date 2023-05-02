@@ -7,7 +7,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: ./docker/backend/Dockerfile
+      dockerfile: ./backend/Dockerfile
     environment:
       - APP_ENV=dev
     depends_on:
@@ -20,7 +20,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: ./docker/frontend/Dockerfile
+      dockerfile: ./frontend/Dockerfile
     environment:
       - APP_ENV=dev
       - APP_BACKEND_URL=backend:40001
@@ -34,7 +34,7 @@ services:
   worker:
     build:
       context: .
-      dockerfile: ./docker/worker/Dockerfile
+      dockerfile: ./worker/Dockerfile
     environment:
       - APP_ENV=dev
     depends_on:
